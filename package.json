@@ -1,0 +1,20 @@
+{
+  "name": "pagina-informativa",
+  "version": "1.0.0",
+  "description": "Una página web informativa con cuatro secciones diferentes.",
+  "main": "src/index.html",
+  "scripts": {
+    "start": "live-server src"
+  },
+  "keywords": [
+    "informativa",
+    "pagina",
+    "web"
+  ],
+  "author": "Tu Nombre",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}

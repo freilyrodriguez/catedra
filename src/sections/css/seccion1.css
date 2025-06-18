@@ -1,0 +1,529 @@
+/* Importar fuentes de Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap");
+
+:root {
+  /* Nueva paleta de colores */
+  --primary-color: #5a31f4; /* Violeta vibrante */
+  --secondary-color: #20c997; /* Verde menta */
+  --background-color: #f0f4f8; /* Azul grisáceo claro */
+  --surface-color: #ffffff; /* Blanco puro para tarjetas */
+  --text-main: #2c2c2c; /* Gris oscuro para texto principal */
+  --text-light: #6c757d; /* Gris medio */
+  --accent-color: #ff6f61; /* Coral suave */
+  --shadow-light: rgba(0, 0, 0, 0.05);
+  --shadow-strong: rgba(0, 0, 0, 0.15);
+}
+
+/* Base de estilos */
+html {
+  scroll-behavior: smooth; /* Desplazamiento suave para todos los enlaces internos */
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.7; /* Mayor espaciado entre líneas para mejor lectura */
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color); /* Aplicado de la nueva paleta */
+  color: var(--text-main); /* Aplicado de la nueva paleta */
+  -webkit-font-smoothing: antialiased; /* Suavizado de fuentes para mejor visualización */
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 20px;
+}
+
+/* Estilos del encabezado */
+header {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Quinta_de_San_Pedro_Alejandrino_2011.jpg/1920px-Quinta_de_San_Pedro_Alejandrino_2011.jpg")
+      no-repeat center center/cover;
+  color: var(--surface-color); /* Aplicado de la nueva paleta */
+  padding: 4rem 0; /* Mayor padding */
+  text-align: center;
+  box-shadow: 0 6px 12px var(--shadow-strong); /* Aplicado de la nueva paleta */ /* Encabezado fijo al hacer scroll */
+  top: 0;
+  /* Asegura que el encabezado esté por encima de otros elementos */
+}
+
+header h1 {
+  font-family: "Lora", serif; /* Usamos la fuente Lora */
+  margin: 0;
+  font-size: 3.2em; /* Título más grande */
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra de texto sutil */
+}
+
+header p {
+  font-size: 1.2rem;
+  color: var(
+    --surface-color
+  ); /* Aseguramos que el párrafo sea blanco de la nueva paleta */
+}
+
+/* Contenedor principal para centrar el contenido (si se usa en lugar de .container) */
+main {
+  max-width: 1100px; /* Ancho máximo un poco más grande */
+  margin: 40px auto; /* Mayor margen superior e inferior */
+  padding: 0 30px; /* Mayor padding lateral */
+  display: grid; /* Usar grid para un layout flexible */
+  gap: 30px; /* Espacio entre secciones */
+}
+
+/* Estilos de las secciones de contenido */
+section {
+  background-color: var(--surface-color); /* Aplicado de la nueva paleta */
+  margin: 30px 0;
+  padding: 40px; /* Mayor padding */
+  border-radius: 12px; /* Bordes más redondeados */
+  box-shadow: 0 4px 20px var(--shadow-light); /* Sombra más suave y moderna */
+  border-left: 6px solid var(--accent-color); /* Aplicado de la nueva paleta */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transición al pasar el mouse */
+}
+
+section:hover {
+  transform: translateY(-5px); /* Pequeño levantamiento al pasar el mouse */
+  box-shadow: 0 8px 25px var(--shadow-strong); /* Aplicado de la nueva paleta */
+}
+
+section:last-of-type {
+  margin-bottom: 0;
+}
+
+h2 {
+  font-family: "Lora", serif; /* Usamos la fuente Lora */
+  color: var(--primary-color); /* Aplicado de la nueva paleta */
+  border-bottom: none; /* Eliminamos el borde inferior directo */
+  padding-bottom: 15px; /* Mayor padding */
+  margin-bottom: 25px; /* Mayor margen */
+  position: relative;
+  font-weight: 700;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60px; /* Longitud del subrayado */
+  height: 3px; /* Grosor del subrayado */
+  background-color: var(--accent-color); /* Aplicado de la nueva paleta */
+  border-radius: 2px;
+}
+
+.contenido-flexible {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+}
+
+.contenido-flexible .texto {
+  flex: 2;
+  min-width: 300px;
+  color: var(--text-light); /* Aplicado de la nueva paleta */
+}
+
+.contenido-flexible .galeria-viaje,
+.contenido-flexible .imagen-destacada {
+  flex: 1;
+  min-width: 250px;
+}
+
+/* Galería de Imágenes y Muerte */
+.galeria-viaje {
+  text-align: center;
+}
+
+.galeria-viaje .galeria-img {
+  width: 100%;
+  max-width: 200px;
+  margin: 5px auto;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.galeria-viaje .galeria-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px var(--shadow-strong); /* Aplicado de la nueva paleta */
+}
+
+.imagen-destacada img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px var(--shadow-strong); /* Sombra para la imagen destacada */
+}
+
+.imagen-destacada small,
+.galeria-viaje small {
+  display: block;
+  text-align: center;
+  margin-top: 15px; /* Ajustado para consistencia */
+  color: var(--text-light); /* Aplicado de la nueva paleta */
+  font-family: "Lora", serif; /* Fuente consistente para subtítulos de imagen */
+  font-style: italic;
+  font-size: 0.95em;
+  opacity: 0.9;
+}
+
+/* Línea de Tiempo */
+.timeline {
+  position: relative;
+  width: 100%;
+  margin: 40px 0;
+  padding: 20px 0;
+  border-top: 4px solid var(--background-color); /* Aplicado de la nueva paleta */
+  display: flex;
+  justify-content: space-between;
+}
+
+.timeline-item {
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+}
+
+.timeline-dot {
+  width: 22px;
+  height: 22px;
+  background-color: var(--background-color); /* Aplicado de la nueva paleta */
+  border-radius: 50%;
+  border: 4px solid var(--surface-color); /* Aplicado de la nueva paleta */
+  transition: background-color 0.3s;
+}
+
+.timeline-item:hover .timeline-dot,
+.timeline-item.active .timeline-dot {
+  background-color: var(--accent-color); /* Aplicado de la nueva paleta */
+}
+
+.timeline-date {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 10px;
+  color: var(--text-main); /* Aplicado de la nueva paleta */
+}
+
+#info-box {
+  background-color: var(--background-color); /* Aplicado de la nueva paleta */
+  border-left: 5px solid var(--accent-color); /* Aplicado de la nueva paleta */
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  min-height: 80px;
+  color: var(--text-light); /* Aplicado de la nueva paleta */
+}
+
+#info-box p {
+  margin: 0;
+}
+
+/* Botones y Documentos */
+.botones-documentos {
+  text-align: center;
+  margin: 20px 0;
+}
+
+button {
+  background-color: var(--primary-color); /* Aplicado de la nueva paleta */
+  color: var(--surface-color); /* Aplicado de la nueva paleta */
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  margin: 5px 10px;
+  transition: background-color 0.3s, transform 0.2s;
+  font-family: "Montserrat", sans-serif; /* Consistencia de fuente */
+  font-weight: 600;
+}
+
+button:hover {
+  background-color: var(--secondary-color); /* Aplicado de la nueva paleta */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px var(--shadow-strong); /* Aplicado de la nueva paleta */
+}
+
+/* Ventanas Modales */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  background-color: var(--surface-color); /* Aplicado de la nueva paleta */
+  margin: 8% auto;
+  padding: 40px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 700px;
+  position: relative;
+  animation: slideIn 0.5s;
+  box-shadow: 0 8px 30px var(--shadow-strong); /* Sombra para el modal */
+  color: var(--text-main); /* Color de texto principal en el modal */
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.close-button {
+  color: var(--text-light); /* Aplicado de la nueva paleta */
+  position: absolute;
+  top: 15px;
+  right: 30px;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close-button:hover {
+  color: var(--accent-color); /* Aplicado de la nueva paleta */
+}
+
+.close-button-img {
+  color: var(--surface-color); /* Color para el botón de cerrar en la imagen */
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para mejor visibilidad en imagen */
+}
+
+.close-button-img:hover {
+  color: var(--accent-color); /* Aplicado de la nueva paleta */
+}
+
+#modal-body {
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+#modal-body h2 {
+  margin-top: 0;
+  color: var(--primary-color); /* Color de título en modal */
+  border-bottom: none; /* Eliminar el borde inferior */
+  padding-bottom: 15px; /* Mantener padding */
+}
+
+#modal-body h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60px; /* Longitud del subrayado */
+  height: 3px; /* Grosor del subrayado */
+  background-color: var(--accent-color); /* Subrayado dorado */
+  border-radius: 2px;
+}
+
+#modal-body p {
+  margin-bottom: 15px;
+  color: var(--text-light); /* Color de texto en modal */
+}
+
+/* Modal para Imágenes */
+.modal-content-img {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  animation: zoomIn 0.6s;
+  border-radius: 8px; /* Bordes redondeados para la imagen del modal */
+  box-shadow: 0 8px 30px var(--shadow-strong); /* Sombra para la imagen del modal */
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+#caption {
+  text-align: center;
+  color: var(--surface-color); /* Color de la leyenda de la imagen */
+  padding: 10px 0;
+  height: 150px;
+  font-family: "Lora", serif;
+  font-style: italic;
+  font-size: 1em;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Sombra para mejor lectura */
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary-color); /* Aplicado de la nueva paleta */
+  color: var(--surface-color); /* Aplicado de la nueva paleta */
+  text-align: center;
+  padding: 25px 0;
+  margin-top: 30px;
+  box-shadow: 0 -4px 12px var(--shadow-strong); /* Sombra superior */
+  font-size: 0.95em;
+  letter-spacing: 0.5px;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 900px) {
+  .container,
+  main {
+    padding: 0 20px;
+    margin: 30px auto;
+  }
+
+  section {
+    padding: 30px;
+  }
+
+  header h1 {
+    font-size: 2.8em;
+  }
+
+  h2 {
+    font-size: 2.2em;
+  }
+
+  .contenido-flexible {
+    flex-direction: column; /* Apilar columnas en pantallas más pequeñas */
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.4em;
+  }
+
+  .container,
+  main {
+    margin: 20px auto;
+    padding: 0 15px;
+  }
+
+  section {
+    padding: 25px;
+    border-radius: 10px;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  button {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+
+  .modal-content {
+    margin: 15% auto;
+    width: 90%;
+    padding: 30px;
+  }
+
+  .modal-content-img {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 2em;
+  }
+
+  .container,
+  main {
+    padding: 0 10px;
+  }
+
+  section {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+  }
+
+  footer {
+    padding: 1.2rem 0;
+    font-size: 0.85em;
+  }
+
+  .timeline {
+    flex-wrap: wrap; /* Permite que los ítems de la línea de tiempo se envuelvan */
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .timeline-item {
+    min-width: 80px; /* Asegura un ancho mínimo para los ítems */
+  }
+
+  .timeline-dot {
+    width: 18px;
+    height: 18px;
+  }
+
+  .timeline-date {
+    font-size: 0.85rem;
+  }
+}
+/* --- */
+/* Estilos para el botón de Inicio en el encabezado */
+.home-button {
+  display: inline-block;
+  background-color: var(--secondary-color); /* Usamos el color secundario */
+  color: var(--surface-color); /* Texto blanco */
+  padding: 12px 25px;
+  margin-top: 20px; /* Espacio superior para separarlo del texto */
+  border-radius: 50px;
+  text-decoration: none; /* Quitar el subrayado del enlace */
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1.05em;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px var(--shadow-light);
+}
+
+.home-button:hover {
+  background-color: var(
+    --primary-color
+  ); /* Cambiar a primary-color al pasar el mouse */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px var(--shadow-strong);
+}

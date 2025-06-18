@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>El Camino a la Inmortalidad de Bolívar - Interactivo</title>
+    <link rel="stylesheet" href="css/seccion1.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>La vida y legado de Gabriel García Márquez</h1>
+        <p>Un viaje por su universo literario y su impacto en el mundo.</p>
+        <a href="../index.html" class="home-button">Volver al Inicio</a>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="viaje">
+        <h2>El Último Viaje a Santa Marta (Mayo - Diciembre 1830)</h2>
+        <div class="contenido-flexible">
+          <div class="texto">
+            <p>
+              El 8 de mayo de 1830, un Simón Bolívar enfermo y políticamente
+              derrotado partió de Bogotá. Su viaje por el río Magdalena fue un
+              reflejo de su declive físico y la desintegración de su sueño
+              grancolombiano. Haz clic en los puntos de la línea de tiempo para
+              explorar los hitos de su travesía.
+            </p>
+            <div id="info-box">
+              <p>
+                Selecciona un punto en la línea de tiempo para ver los detalles.
+              </p>
+            </div>
+          </div>
+          <div class="galeria-viaje">
+            <img
+              src="../../../catedra/src/imagenes/quitna.png"
+              alt="Quinta de San Pedro Alejandrino"
+              class="galeria-img"
+            />
+            <small>Haz clic en las imágenes para ampliarlas.</small>
+          </div>
+        </div>
+        <div class="timeline">
+          <div
+            class="timeline-item"
+            data-info="<b>8 de Mayo - Bogotá:</b> Parte hacia la costa en un bergantín por el río Magdalena, abandonando la capital de una república que se desmoronaba."
+          >
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">Mayo 8</div>
+          </div>
+          <div
+            class="timeline-item"
+            data-info="<b>Junio - Turbaco:</b> Permanece varios días aquí, su salud empeora. Se entera de la consolidación de la separación de Venezuela."
+          >
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">Junio</div>
+          </div>
+          <div
+            class="timeline-item"
+            data-info="<b>1 de Julio - Cartagena:</b> Recibe la devastadora noticia del asesinato de su amigo y heredero político, el Mariscal Antonio José de Sucre."
+          >
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">Julio 1</div>
+          </div>
+          <div
+            class="timeline-item"
+            data-info="<b>1 de Diciembre - Santa Marta:</b> Arriba en un estado crítico. El español Joaquín de Mier y Benítez le ofrece alojamiento en su hacienda, la Quinta de San Pedro Alejandrino."
+          >
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">Dic 1</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="documentos">
+        <h2>Documentos para la Posteridad</h2>
+        <p>
+          En sus últimos días, Bolívar legó a la posteridad dos documentos
+          cruciales que resumen su pensamiento y su última voluntad. Haz clic
+          para leerlos.
+        </p>
+        <div class="botones-documentos">
+          <button id="btn-proclama">Última Proclama</button>
+          <button id="btn-testamento">Testamento</button>
+        </div>
+      </section>
+
+      <section id="muerte">
+        <h2>Muerte en San Pedro Alejandrino</h2>
+        <div class="contenido-flexible">
+          <div class="texto">
+            <p>
+              El <strong>17 de diciembre de 1830</strong>, a la una y tres
+              minutos de la tarde, Simón Bolívar falleció de tuberculosis.
+              Atendido por el médico francés Alejandro Próspero Révérend, su
+              muerte marcó el fin de una era y el nacimiento de una leyenda
+              inmortal.
+            </p>
+            <p>
+              Según la tradición, sus últimas palabras fueron:
+              <em
+                >"Vámonos, vámonos... esta gente no nos quiere en esta tierra...
+                ¡Oh, cómo saldré yo de este laberinto!"</em
+              >
+            </p>
+          </div>
+          <div class="imagen-destacada">
+            <img
+              src="../../../catedra/src/imagenes/retarato_de_muerte.png"
+              alt="Pintura 'La Muerte del Libertador' de Antonio Herrera Toro"
+            />
+            <small
+              ><em>"La Muerte del Libertador"</em> (1883) por Antonio Herrera
+              Toro.</small
+            >
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div id="modal-general" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <div id="modal-body"></div>
+      </div>
+    </div>
+
+    <div id="modal-imagen" class="modal">
+      <span class="close-button-img">&times;</span>
+      <img class="modal-content-img" id="img-modal" />
+      <div id="caption"></div>
+    </div>
+
+    <footer>
+      <p>&copy;estudiante (unefa) freily rodriguez</p>
+    </footer>
+
+    <script src="interaccion.js"></script>
+  </body>
+</html>

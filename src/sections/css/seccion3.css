@@ -1,0 +1,297 @@
+/* Importar fuentes de Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap");
+
+:root {
+  /* Nueva Paleta de Colores */
+  --primary-dark: #2c3e50; /* Azul petróleo oscuro para cabeceras y pie de página */
+  --secondary-dark: #34495e; /* Azul grisáceo oscuro para subtítulos y bordes de texto */
+  --accent-orange: #e67e22; /* Naranja quemado para acentos y enlaces */
+  --light-beige: #f4f7f6; /* Fondo general muy claro, un beige suave */
+  --white: #ffffff; /* Fondo para secciones de contenido */
+  --text-primary: #2d2d2d; /* Texto principal casi negro */
+  --text-secondary: #5a5a5a; /* Texto secundario/cuerpo */
+  --shadow-light: rgba(0, 0, 0, 0.08); /* Sombra ligera */
+  --shadow-medium: rgba(0, 0, 0, 0.15); /* Sombra media */
+}
+
+/* Base de estilos */
+html {
+  scroll-behavior: smooth; /* Desplazamiento suave para todos los enlaces internos */
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.7; /* Mayor espaciado entre líneas para mejor lectura */
+  margin: 0;
+  padding: 0;
+  background-color: var(--light-beige); /* Usamos el nuevo fondo claro */
+  color: var(--text-secondary);
+  -webkit-font-smoothing: antialiased; /* Suavizado de fuentes para mejor visualización */
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 20px;
+}
+
+/* Estilos del encabezado */
+header {
+  /* Puedes mantener una imagen de fondo o usar solo el color para un diseño más limpio */
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Quinta_de_San_Pedro_Alejandrino_2011.jpg/1920px-Quinta_de_San_Pedro_Alejandrino_2011.jpg")
+      no-repeat center center/cover;
+  background-color: var(--primary-dark); /* Color de fallback */
+  color: var(--white);
+  padding: 4rem 0; /* Mayor padding */
+  text-align: center;
+  box-shadow: 0 6px 12px var(--shadow-medium); /* Sombra más pronunciada */
+
+  top: 0;
+  z-index: 1000; /* Asegura que el encabezado esté por encima de otros elementos */
+}
+
+header h1 {
+  font-family: "Lora", serif; /* Usamos la fuente Lora */
+  margin: 0;
+  font-size: 3.2em; /* Título más grande */
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra de texto sutil */
+}
+
+header p {
+  font-size: 1.2rem;
+  color: var(--white); /* Aseguramos que el párrafo sea blanco */
+  margin-top: 10px;
+}
+
+/* Contenedor principal para centrar el contenido (si se usa en lugar de .container directo) */
+main {
+  max-width: 1100px; /* Ancho máximo un poco más grande */
+  margin: 40px auto; /* Mayor margen superior e inferior */
+  padding: 0 30px; /* Mayor padding lateral */
+  display: grid; /* Usar grid para un layout flexible */
+  gap: 30px; /* Espacio entre secciones */
+}
+
+/* Estilos de las secciones de contenido */
+section {
+  background-color: var(--white);
+  margin: 30px 0;
+  padding: 40px; /* Mayor padding */
+  border-radius: 12px; /* Bordes más redondeados */
+  box-shadow: 0 4px 20px var(--shadow-light); /* Sombra más suave y moderna */
+  border-left: 6px solid var(--accent-orange); /* Usamos el nuevo color de acento */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transición al pasar el mouse */
+}
+
+section:hover {
+  transform: translateY(-5px); /* Pequeño levantamiento al pasar el mouse */
+  box-shadow: 0 8px 25px var(--shadow-medium); /* Sombra más intensa al pasar el mouse */
+}
+
+section:last-of-type {
+  margin-bottom: 0;
+}
+
+h2 {
+  font-family: "Lora", serif; /* Usamos la fuente Lora */
+  color: var(--primary-dark);
+  border-bottom: none; /* Eliminamos el borde inferior directo */
+  padding-bottom: 15px; /* Mayor padding */
+  margin-bottom: 25px; /* Mayor margen */
+  position: relative;
+  font-weight: 700;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60px; /* Longitud del subrayado */
+  height: 3px; /* Grosor del subrayado */
+  background-color: var(--accent-orange); /* Usamos el nuevo color de acento */
+  border-radius: 2px;
+}
+
+.contenido-flexible {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: flex-start; /* Alinea los elementos al inicio para que el texto no afecte la altura de la imagen */
+}
+
+.contenido-flexible .imagen-interactiva {
+  flex: 1;
+  min-width: 250px; /* Ancho mínimo para la imagen */
+  max-width: 350px; /* Ancho máximo para la imagen en el flex container */
+  text-align: center;
+  cursor: pointer;
+  background-color: var(--light-beige); /* Usamos el nuevo fondo claro */
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px var(--shadow-light);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contenido-flexible .imagen-interactiva:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px var(--shadow-medium);
+}
+
+.contenido-flexible .imagen-interactiva img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto 10px auto; /* Espacio debajo de la imagen */
+  box-shadow: 0 4px 12px var(--shadow-medium);
+}
+
+.contenido-flexible .imagen-interactiva small {
+  display: block;
+  margin-top: 10px;
+  color: var(--secondary-dark);
+  font-family: "Lora", serif;
+  font-style: italic;
+  font-size: 0.9em;
+  opacity: 0.9;
+}
+
+.contenido-flexible .texto-info {
+  flex: 2; /* El texto ocupa más espacio */
+  min-width: 300px;
+  background-color: var(--light-beige); /* Usamos el nuevo fondo claro */
+  border-left: 5px solid var(--accent-orange); /* Usamos el nuevo color de acento */
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px var(--shadow-light);
+  color: var(--text-primary);
+  font-size: 1.05em;
+  line-height: 1.8;
+  height: fit-content; /* Ajusta la altura al contenido */
+}
+
+.contenido-flexible .texto-info p {
+  margin: 0; /* Elimina el margen predeterminado del párrafo dentro de texto-info */
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary-dark);
+  color: var(--white);
+  text-align: center;
+  padding: 2rem 0; /* Mayor padding */
+  margin-top: 50px; /* Mayor margen superior */
+  box-shadow: 0 -4px 12px var(--shadow-medium); /* Sombra superior */
+  font-size: 0.95em;
+  letter-spacing: 0.5px;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 900px) {
+  .container,
+  main {
+    padding: 0 20px;
+    margin: 30px auto;
+  }
+
+  section {
+    padding: 30px;
+  }
+
+  header h1 {
+    font-size: 2.8em;
+  }
+
+  h2 {
+    font-size: 2.2em;
+  }
+
+  .contenido-flexible {
+    flex-direction: column; /* Apilar columnas en pantallas más pequeñas */
+    gap: 20px;
+  }
+
+  .contenido-flexible .imagen-interactiva,
+  .contenido-flexible .texto-info {
+    max-width: 100%; /* Ocupa todo el ancho disponible */
+    min-width: unset; /* Reinicia el min-width */
+  }
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.4em;
+  }
+
+  .container,
+  main {
+    margin: 20px auto;
+    padding: 0 15px;
+  }
+
+  section {
+    padding: 25px;
+    border-radius: 10px;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 2em;
+  }
+
+  .container,
+  main {
+    padding: 0 10px;
+  }
+
+  section {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+  }
+
+  footer {
+    padding: 1.2rem 0;
+    font-size: 0.85em;
+  }
+}
+
+/* --- */
+/* Estilos para el botón de Inicio en el encabezado */
+.home-button {
+  display: inline-block;
+  background-color: var(--secondary-color); /* Usamos el color secundario */
+  color: var(--surface-color); /* Texto blanco */
+  padding: 12px 25px;
+  margin-top: 20px; /* Espacio superior para separarlo del texto */
+  border-radius: 50px;
+  text-decoration: none; /* Quitar el subrayado del enlace */
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1.05em;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px var(--shadow-light);
+}
+
+.home-button:hover {
+  background-color: var(
+    --primary-color
+  ); /* Cambiar a primary-color al pasar el mouse */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px var(--shadow-strong);
+}
